@@ -1,0 +1,330 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #000000; 
+    color: #ffffff; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+header {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid #222222;
+    padding: 16px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+header nav a {
+    margin-left: 32px;
+    text-decoration: none;
+    color: #888888;
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: #ffffff;
+}
+
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex: 1;
+    width: 100%;
+}
+
+
+.hero {
+    background-color: #080808;
+    border: 1px solid #222222;
+    padding: 60px 48px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero span {
+    font-size: 0.75rem;
+    color: #888888;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 12px 0;
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1rem;
+    color: #aaaaaa;
+    margin-bottom: 32px;
+    max-width: 550px;
+    font-weight: 400;
+}
+
+.hero .btn-hero {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.hero .btn-hero:hover {
+    background-color: #e5e5e5;
+    transform: scale(1.02);
+}
+
+
+.catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.catalog-header .title-group span {
+    font-size: 0.75rem;
+    color: #666666;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.catalog-header .title-group h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.total-badge {
+    background-color: #111111;
+    border: 1px solid #222222;
+    color: #888888;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+
+.card {
+    background-color: #0a0a0a;
+    border: 1px solid #222222;
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #555555;
+    transform: translateY(-4px);
+    background-color: #111111;
+}
+
+
+.card-image-wrapper {
+    width: 100%;
+    height: 180px;
+    background-color: #111111;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .product-img {
+    transform: scale(1.05); 
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    color: #666666;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.card-header .discount-tag {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 800;
+}
+
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.35;
+    letter-spacing: -0.3px;
+}
+
+.price-section {
+    margin-bottom: 24px;
+}
+
+.original-price {
+    font-size: 0.85rem;
+    color: #555555;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+}
+
+.final-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.stock-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #1a1a1a;
+    font-size: 0.8rem;
+    color: #777777;
+}
+
+.badge-tersedia {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid #333333;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.badge-habis {
+    background-color: #1a1a1a;
+    color: #555555;
+    border: 1px solid #222222;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+/* Tombol Beli */
+.btn-buy {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.btn-buy:hover:not(:disabled) {
+    background-color: #cccccc;
+}
+
+.btn-buy:disabled {
+    background-color: #161616;
+    color: #444444;
+    border: 1px solid #222222;
+    cursor: not-allowed;
+}
+
+
+footer {
+    text-align: center;
+    padding: 32px 20px;
+    background-color: #000000;
+    border-top: 1px solid #1a1a1a;
+    margin-top: 60px;
+    font-size: 0.8rem;
+    color: #555555;
+}
+
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .catalog-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
