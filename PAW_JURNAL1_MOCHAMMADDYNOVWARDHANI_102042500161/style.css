@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+/* Variable Tema Global */
+:root {
+  --h-primary: #673de6;
+  --h-primary-hover: #471ea7;
+  --h-primary-focus: #7b66ff;
+  --h-primary-light: #9d99ff;
+  --h-primary-tint: #f5f6ff;
+  --h-text-main: #18181a;
+  --h-text-muted: #797980;
+  --h-border: #dedee2;
+  --h-danger: #e23c3c;
+  --h-danger-light: #fdeded;
+  --h-success: #009e5b;
+  --h-success-light: #dcf8e3;
+
+  --h-radius-sm: 8px;
+  --h-radius-xl: 16px;
+  --h-radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Base Body dengan Latar Belakang Kampus Blur Gelap */
+body {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 40px 15px;
+  min-height: 100vh;
+  color: var(--h-text-main);
+  background-color: #0f0c1b;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Efek Latar Belakang Foto Kampus */
+body::before {
+  content: "";
+  position: fixed;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  background-image: 
+    linear-gradient(rgba(15, 12, 27, 0.65), rgba(15, 12, 27, 0.65)),
+    url("bg-campus.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(10px);
+  transform: scale(1.05);
+}
+
+/* Container Kartu Putih di Tengah */
+.container, .id-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  padding: 36px 32px;
+  border-radius: var(--h-radius-xl);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo EAD */
+.logo {
+  display: block;
+  margin: 0 auto 14px;
+  max-width: 140px;
+  height: auto;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--h-text-main);
+  text-align: center;
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--h-text-muted);
+  font-size: 13px;
+  margin: 0 0 20px 0;
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label {
+  font-weight: 600;
+  color: #222225;
+  font-size: 13px;
+}
+
+.required {
+  color: var(--h-danger);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: #ffffff;
+  border: 1px solid var(--h-border);
+  border-radius: var(--h-radius-sm);
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--h-text-main);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--h-primary-focus);
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.error {
+  color: var(--h-danger);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Tombol */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--h-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--h-radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--h-primary-hover);
+}
+
+.btn-lihat-data {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--h-primary);
+  border: 1px solid var(--h-primary);
+  border-radius: var(--h-radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-lihat-data:hover {
+  background-color: var(--h-primary-tint);
+}
+
+/* Pesan Alert Error & Sukses */
+.alert {
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border-radius: var(--h-radius-sm);
+  font-size: 13px;
+}
+
+.alert-danger {
+  color: #a81c1c;
+  background-color: var(--h-danger-light);
+  border: 1px solid #f9c7c7;
+}
+
+.alert-success {
+  color: var(--h-success);
+  background-color: var(--h-success-light);
+  border: 1px solid #b2f3c2;
+}
+
+/* Mode ID Card */
+.id-card-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.id-card-row {
+  display: flex;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.id-card-label {
+  width: 140px;
+  font-weight: 600;
+  color: var(--h-text-muted);
+  flex-shrink: 0;
+}
+
+.id-card-value {
+  color: var(--h-text-main);
+  font-weight: 500;
+  flex: 1;
+}
+
+.id-card-divider {
+  border: none;
+  border-top: 1px solid var(--h-border);
+  margin: 12px 0;
+}
+
+.id-card-badge {
+  display: inline-block;
+  background-color: var(--h-success-light);
+  color: var(--h-success);
+  padding: 4px 14px;
+  border-radius: var(--h-radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.btn-kembali {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--h-primary);
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: var(--h-radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.id-card-footer {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--h-text-muted);
+}
